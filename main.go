@@ -78,7 +78,7 @@ func main() {
 	router.Use(gin.Recovery())
 	router.Use(RequestLoggerMiddleware())
 
-	api := router.Group("/api/v1/")
+	api := router.Group("/api/v1")
 	api.POST("/inquiry", inquiryController.InquiryAccountNumber)
 
 	server := &http.Server{
